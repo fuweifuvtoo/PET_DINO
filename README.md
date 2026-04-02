@@ -7,13 +7,13 @@ If you find our work helpful, please kindly give us a star⭐
 
 ## UPDATES
 
-* [2026.04.05] Release the code.
-* [2026.04.03] The PET-DINO paper is now publicly available on arXiv.
+* [2026.04.02] Release the code.
+* [2026.04.01] The PET-DINO paper is now publicly available on arXiv.
 * [2026.02.21] 🔥🔥🔥 PET-DINO is accepted by CVPR 2026! Congratulations and many thanks to the co-authors!
 
 ## Introduction
 
-PET-DINO is an open-vocabulary object detector that supports **text prompts** and **visual prompts**. It is built upon [MM-Grounding-DINO](https://arxiv.org/abs/2401.02361), incorporating visual prompt capabilities for flexible and expressive object detection.
+PET-DINO is an open-vocabulary object detector that supports **text prompts** and **visual prompts**. It is built upon MM-Grounding-DINO, incorporating visual prompt capabilities for flexible and expressive object detection.
 
 PET-DINO supports two types of prompts:
 
