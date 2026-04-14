@@ -1,5 +1,8 @@
 <p align="center">
-  <h1 align="center">PET-DINO: Unifying Visual Cues into Grounding DINO with <br> Prompt-Enriched Training</h1>
+   <h1 align="center">
+      <img src="images/pet_dino.png" width="60" style="vertical-align: middle; margin-top: 6px;">
+      PET-DINO: Unifying Visual Cues into Grounding DINO with Prompt-Enriched Training
+    </h1>
    <h3 align="center">CVPR 2026 <span style="color: red;">Highlight</span> 🔥</h3>
   
   <p align="center">
