@@ -258,14 +258,11 @@ python scripts/image_demo.py images/animals.png \
 If you find this work useful for your research, please consider citing:
 
 ```bibtex
-@misc{fu2026petdinounifyingvisualcues,
-      title={PET-DINO: Unifying Visual Cues into Grounding DINO with Prompt-Enriched Training}, 
-      author={Weifu Fu and Jinyang Li and Bin-Bin Gao and Jialin Li and Yuhuan Lin and Hanqiu Deng and Wenbing Tao and Yong Liu and Chengjie Wang},
-      year={2026},
-      eprint={2604.00503},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2604.00503}, 
+@article{fu2026pet,
+  title={PET-DINO: Unifying Visual Cues into Grounding DINO with Prompt-Enriched Training},
+  author={Fu, Weifu and Li, Jinyang and Gao, Bin-Bin and Li, Jialin and Lin, Yuhuan and Deng, Hanqiu and Tao, Wenbing and Liu, Yong and Wang, Chengjie},
+  journal={arXiv preprint arXiv:2604.00503},
+  year={2026}
 }
 ```
 
