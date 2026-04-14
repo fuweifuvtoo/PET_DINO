@@ -1,28 +1,52 @@
-# PET-DINO: Unifying Visual Cues into Grounding DINO with Prompt-Enriched Training
-This is the official implementation of [PET-DINO](https://arxiv.org/abs/2604.00503).
+<p align="center">
+  <h1 align="center">PET-DINO: Unifying Visual Cues into Grounding DINO with <br> Prompt-Enriched Training</h1>
+   <h3 align="center">CVPR 2026 <span style="color: red;">Highlight</span> 🔥</h3>
+  
+  <p align="center">
+    <a href="https://scholar.google.com.hk/citations?user=xG8B1vsAAAAJ&hl=zh-CN&oi=ao">Weifu Fu</a><sup>1,*,†</sup>,
+    <a href="https://scholar.google.com.hk/citations?user=4H2mSI0AAAAJ&hl=zh-CN&authuser=1&oi=sra">Jinyang Li</a><sup>2,*</sup>,
+    <a href="https://csgaobb.github.io/">Bin-Bin Gao</a><sup>1</sup>,
+    <a href="https://scholar.google.com/citations?user=QuMf688AAAAJ&hl=en">Jialin Li</a><sup>3</sup>
+    <br>
+    <a href="https://scholar.google.com.hk/citations?user=pfyGbuEAAAAJ&hl=zh-CN&oi=ao">Yuhuan Lin</a><sup>1</sup>,
+    <a href="https://scholar.google.com.hk/citations?user=nmNQjgIAAAAJ&hl=zh-CN">Hanqiu Deng</a><sup>1</sup>,
+    <a href="https://scholar.google.com.hk/citations?user=jRDPE2AAAAAJ&hl=zh-CN&oi=ao">Wenbing Tao</a><sup>2</sup>,
+    <a href="https://scholar.google.com/citations?user=aqvFa1EAAAAJ&hl=en">Yong Liu</a><sup>1</sup>,
+    <a href="https://scholar.google.com/citations?user=fqte5H4AAAAJ&hl=en">Chengjie Wang</a><sup>1</sup>
+    <br>
+    <br>
+    <sup>1</sup>YouTu Lab, Tencent &nbsp;&nbsp;
+    <sup>2</sup>Huazhong University of Science and Technology &nbsp;&nbsp;
+    <sup>3</sup>Kling Team, Kuaishou Technology
+    <br>
+    <br>
+    <sup>*</sup>Equal Contribution. &nbsp;&nbsp; <sup>†</sup>Corresponding Author.
+  </p>
 
-🎉🎉🎉 Our paper is accepted by CVPR 2026, congratulations and many thanks to the co-authors!
+  <p align="center">
+    <a href="https://arxiv.org/pdf/2604.00503"><img src="https://img.shields.io/badge/Arxiv-2403.20309-b31b1b.svg?logo=arXiv" alt="arXiv"></a>
+    &nbsp;
+    <a href="https://fuweifuvtoo.github.io/pet-dino"><img src="https://img.shields.io/badge/Project-Website-green.svg" alt="Home Page"></a>
+  </p>
+</p>
 
-If you find our work helpful, please kindly give us a star⭐
+## 💡 News
+* **[2026.04.09]** 🏆 **PET-DINO** is selected as a **CVPR 2026 Highlight 🔥**!
+* **[2026.04.02]** 🚀 Code and pre-trained models have been released.
+* **[2026.04.01]** 📄 The [PET-DINO](https://arxiv.org/pdf/2604.00503) paper is now available on arXiv.
+* **[2026.02.21]** 🎉 PET-DINO is accepted by **CVPR 2026**!
 
-## UPDATES
+## 📖 Introduction
 
-* [2026.04.02] Release the code.
-* [2026.04.01] The PET-DINO paper is now publicly available on arXiv.
-* [2026.02.21] 🔥🔥🔥 PET-DINO is accepted by CVPR 2026! Congratulations and many thanks to the co-authors!
+PET-DINO is a universal detector supporting both text and visual prompts. 
 
-## Introduction
+- Alignment-Friendly Visual Prompt Generation (**AFVPG**): PET-DINO efficiently integrates visual cues while reducing development costs.  
+- **The first training strategies for open-set detection**: Intra-Batch Parallel Prompting (**IBP**), Dynamic Memory-Driven Prompting (**DMD**).  
+- While enhancing the model’s ability to detect complex and domain-specific objects, PET-DINO preserves the original capability of the text prompt pathway and adapts well to **diverse real-world scenarios** with strong **open-set classification** ability.
 
-PET-DINO is an open-vocabulary object detector that supports **text prompts** and **visual prompts**. It is built upon MM-Grounding-DINO, incorporating visual prompt capabilities for flexible and expressive object detection.
+**Text Prompt** enables detection of objects described by text labels (e.g., "zebra . giraffe . bird"), while **Visual Prompt** enables detection using visual cues and can be evaluated in two modes: **Visual-I** and **Visual-G**.
 
-PET-DINO supports two types of prompts:
-
-- **Text Prompt**: Detect objects described by text labels (e.g., "zebra . giraffe . bird").
-- **Visual Prompt**: Detect objects using visual information as prompts, which can be evaluated in two modes:
-  - **Visual-I**
-  - **Visual-G**
-
-## Environment
+## 🛠️ Environment
 
 Please first install following the instructions in the [get_started](https://github.com/open-mmlab/mmdetection/blob/main/docs/en/get_started.md) section, then you need to install additional dependency packages:
 
@@ -34,7 +58,7 @@ pip install git+https://github.com/lvis-dataset/lvis-api.git
 
 > **Note**: The LVIS third-party library does not currently support numpy >= 1.24. Please ensure your numpy version meets the requirements. It is recommended to install `numpy==1.23`.
 
-## Data Preparation
+## 📂 Data Preparation
 
 ### Pretrained Weights
 
@@ -97,13 +121,13 @@ data/
     └── ...  (35 datasets in total)
 ```
 
-## Train
+## 🚀 Train
 
 ```bash
 bash tools/dist_train.sh configs/pet_dino/pet_dino_swin-t_8xb4_12e_obj365.py 8 --auto-scale-lr
 ```
 
-## Evaluation
+## 📊 Evaluation
 
 ### COCO
 
@@ -184,7 +208,7 @@ bash scripts/evaluate_visual-G_of_odinw35.sh $CONFIG $ODinW35_CONFIG $CHECKPOINT
 python scripts/get_avg_map_of_odinw.py
 ```
 
-## Inference
+## ⚡ Inference
 
 ### Text Prompt
 
@@ -226,7 +250,7 @@ python scripts/image_demo.py images/animals.png \
     --prompt_visual_embedding_path outputs/visual_embedding_animals/30.pt
 ```
 
-## Citation
+## 📜 Citation
 
 If you find this work useful for your research, please consider citing:
 
@@ -242,7 +266,7 @@ If you find this work useful for your research, please consider citing:
 }
 ```
 
-## Acknowledgement
+## 🤝 Acknowledgement
 
 This project is built upon the following excellent works:
 
