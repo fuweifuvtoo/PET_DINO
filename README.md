@@ -132,6 +132,8 @@ bash tools/dist_train.sh configs/pet_dino/pet_dino_swin-t_8xb4_12e_obj365.py 8 -
 
 ## 📊 Evaluation
 
+Checkpoints for quick-start Evaluation and Inference can be downloaded from [HuggingFace](https://huggingface.co/fuweifu/PET-DINO/tree/main).
+
 ### COCO
 
 ```bash
